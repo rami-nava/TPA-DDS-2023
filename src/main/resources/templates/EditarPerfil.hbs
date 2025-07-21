@@ -1,0 +1,92 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/EditarPerfil.css">
+        <title>Editar Perfil</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+         <a href="/perfil">Cancelar</a>
+            <h2>Mi Perfil</h2>
+             <div class="imagen">
+                 <img alt="fotoDePerfil" src="/images/userLogo.png" id="fotoDePerfil">
+             </div>
+             <div class="informacion">
+             <div id="infError" data-hay-error="{{hayError}}" data-mensaje-error="{{mensajeDeError}}">
+                <form action="/editar/perfil" method="post" id="datos">
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="usuario">Usuario *</label>
+                            <input class="form-control input-field obligatorio" type="text" id="usuario" name="usuario" value="{{miembroDeComunidad.usuario.username}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="contrasenia">Contraseña *</label>
+                            <input class="form-control input-field obligatorio" type="text" id="contrasenia" name="contrasenia" value="{{miembroDeComunidad.usuario.contrasenia}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                             <label class="input-group-text" for="nombre">Nombre *</label>
+                             <input class="form-control input-field obligatorio" type="text" id="nombre" name="nombre" value="{{miembroDeComunidad.nombre}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                             <label class="input-group-text" for="apellido">Apellido *</label>
+                             <input class="form-control input-field obligatorio" type="text" id="apellido" name="apellido" value="{{miembroDeComunidad.apellido}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                             <label class="input-group-text" for="mail">Mail *</label>
+                             <input class="form-control input-field obligatorio" type="text" id="mail" name="mail" value="{{miembroDeComunidad.receptorDeNotificaciones.mail}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                             <label class="input-group-text" for="telefono">Telefono *</label>
+                             <input class="form-control input-field obligatorio" type="tel" id="telefono" name="telefono" value="{{miembroDeComunidad.receptorDeNotificaciones.telefono}}">
+                        </div>
+                    </div>
+
+                    {{#unless administrador}}
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                             <label class="input-group-text" for="medioDeComunicacion">Medio de Comunicacion</label>
+                             <select class="form-select input-field" id="medioDeComunicacionSelect" name="medioDeComunicacion" data-medio-seleccionado="{{miembroDeComunidad.receptorDeNotificaciones.medioDeComunicacion.nombre}}">
+                                <option value="Mail">Mail</option>
+                                <option value="Whatsapp">Whatsapp</option>
+                             </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="formaDeNotificar">Forma de Notificacion</label>
+                             <select class="form-select input-field" id="formaDeNotificarSelect" name="formaDeNotificar" data-forma-seleccionada="{{miembroDeComunidad.receptorDeNotificaciones.formaDeNotificar.nombre}}">
+                                <option value="Cuando Suceden">Cuando Suceden</option>
+                                <option value="Sin Apuros">Sin Apuros</option>
+                             </select>
+                        </div>
+                    </div>
+                    {{/unless}}
+                    <button type="submit" class="btn boton btn-editar-perfil">Guardar</button>
+                </form>
+             </div>
+         </div>
+        </div>
+         <script src="/js/EditarPerfil.js"></script>
+        {{#if usuarioBasico}}
+                <script src="/js/EnviarUbicacion.js"></script>
+        {{/if}}
+ {{/partial}}
+ {{> templates/base }}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head> <!--Contenedor de metadata y otras cosas como el titulo-->
+        <meta charset="utf-8"> <!--Definir los caracteres a utilizar-->
+        <link rel = "stylesheet" href = "ReporteDeIncidente.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <title>Reporte de Incidente</title>
+    </head>
+
+    <body id="body">
+        <header id="main-header">
+            <a id="logo-header" href="#">
+                <span class="site-name">Serviño</span>
+                <span class="site-desc">Servicios/ Comunidades</span>
+            </a>
+
+            
+            <nav>
+                <ul>
+                    <li class="nav-item"><a href="#">Inicio</a></li>
+                    <li class="nav-item"><a href="#">Mis Incidentes</a></li>
+                    <li class="nav-item"><a href="#">Sugerencias de Revisión</a></li>
+                    <li class="nav-item"><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div id="base">
+            <div class="circulo">
+                <img src="./imagenes/reporteImage.png" alt="userImage" id="userImage" width="100" height="100">
+            </div>
+                <form id="incidente">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Comunidad</label>
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option selected>Seleccionar...</option>
+                                <option value="1">Uno</option>
+                                <option value="2">Dos</option>
+                                <option value="3">Tres</option>
+                            </select>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Entidad</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Seleccionar...</option>
+                                    <option value="1">Uno</option>
+                                    <option value="2">Dos</option>
+                                    <option value="3">Tres</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Establecimiento</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Seleccionar...</option>
+                                    <option value="1">Uno</option>
+                                    <option value="2">Dos</option>
+                                    <option value="3">Tres</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Servicio</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Seleccionar...</option>
+                                    <option value="1">Uno</option>
+                                    <option value="2">Dos</option>
+                                    <option value="3">Tres</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Fecha y Hora</span>
+                                <input type="datetime-local" class="form-control" id="fechaYhoraInput">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Estado</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Seleccionar...</option>
+                                    <option value="1">Abierto</option>
+                                    <option value="2">Cerrado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Observaciones</span>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>               
+                        </div>
+
+                        <button type="button" class="btn btn-secondary inicioSesion">Enviar</button>
+                </form>
+            </div>
+    </body>
+
+</html>

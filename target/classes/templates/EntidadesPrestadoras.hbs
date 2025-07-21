@@ -1,0 +1,33 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/EntidadesPrestadoras.css">
+        <title>EntidadesPrestadoras</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+            <h1>ENTIDADES PRESTADORAS</h1>
+                <div class="row row-cols-1 g-4">
+                {{#each entidadesPrestadoras}}
+                    <div class="col">
+                        <div class="tarjetaEntidadPrestadora d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2>{{this.nombre}}</h2>
+                                {{#if this.tieneContacto}}
+                                    <h4>Contacto: {{this.personaMail}}</h4>
+                                {{/if}}
+                                <h4>Entidades: {{this.cantidadEntidades}}</h4>
+                                <h4>Algunas Entidades: {{this.nombreDeEntidades}}</h4>
+                            </div>
+                            <button type="button" class="btn btn-lg boton" onclick="window.location.href='/organismosDeControl/{{organismo_id}}/entidadesPrestadoras/{{this.id}}/entidades'">Entidades</button>
+                            </div>
+                    </div>
+                {{/each}}
+                </div>
+        </div>
+        {{#if usuarioBasico}}
+            <script src="/js/EnviarUbicacion.js"></script>
+        {{/if}}
+{{/partial}}
+{{> templates/base }}

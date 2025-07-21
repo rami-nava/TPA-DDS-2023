@@ -1,0 +1,124 @@
+@import url(https://fonts.google.com/specimen/Oswald);
+#body{
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 850px;/*Es la unica forma que logre para centrar el contenedor*/
+    background-color: #ffd59e;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#base{
+    position: relative;
+    max-width: 800px;
+    min-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.circulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -280%);
+    width: 22%; /* ajusta el tamaño del círculo */
+    height: 22%; /* ajusta el tamaño del círculo */
+    background-color: #ffd59e;
+    background-position-x: 90%;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.7);;
+    border-radius: 50%; /* convierte el círculo en un círculo perfecto */
+    overflow: hidden; /* oculta el contenido fuera del círculo */
+    text-align: center;
+}
+
+#main-header {
+	background: #130101;
+	height: 80px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+    z-index: 999;
+}			
+
+#main-header a {
+	color: white;
+}
+		
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+#logo-header:hover {
+	color: #73caf2cc;
+}
+	
+#logo-header .site-name {
+	display: block;
+	font-weight: 700;
+    font-size: x-large;
+}
+	
+#logo-header .site-desc {
+	display: block;
+	font-weight: 300;
+	font-size: 0.8em;
+	color: #999;
+}
+	
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-right: 20px;
+}
+	
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+}
+			
+nav ul li a {
+	display: block;
+	padding: 0 10px;
+	text-decoration: none;
+}
+			
+nav ul li a:hover {
+	background: #73caf2cc;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ajusta la imagen dentro del círculo sin distorsionarla */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* Centra vertical y horizontalmente */
+}
+
+button{
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
+}
+
+#incidente{
+    margin-top: 50px;
+}
+

@@ -1,0 +1,133 @@
+openapi: 3.0.3
+info:
+  title: API de ranking de entidades con mayor impacto.
+  description: Esta API se encarga de manejar el Servicio 3 (entidades con mayor impacto)
+  version: 1.0.0
+servers:
+- url: http://localhost:8080/ranking
+tags:
+- name: Listado de entidades con mayor impacto
+  description: Procesa la información de las entidades, incidentes y comunidades para devolver cuáles entidades tuvieron un mayor impacto con sus problemáticas.
+
+paths:
+  /:
+    post:
+      tags:
+      - entidades
+      summary: Envía a la API la información necesaria para armar el ranking y lo devuelve
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BodyPost'
+        required: true
+      responses:
+        200:
+          description: (OK) Datos procesados con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponsePost'
+              
+              
+components:
+  schemas:
+    BodyPost:
+      type: object
+      properties:
+        CNF:
+          type: integer
+        entidades:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              establecimientos:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+        incidentes:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              horaApertura:
+                type: string
+                description: 'Date time ISO 8601. Obligatorio'
+              horaCierre:
+                type: string
+                description: 'Date time ISO 8601. No obligatorio'
+              establecimiento:
+                type: object
+                properties:
+                    id:
+                      type: integer
+              servicio:
+                type: object
+                properties:
+                    id:
+                      type: integer
+        comunidades:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              incidentes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    horaApertura:
+                      type: string
+                      description: 'Date time ISO 8601. Obligatorio'
+                    horaCierre:
+                      type: string
+                      description: 'Date time ISO 8601. No obligatorio'
+                    establecimiento:
+                      type: object
+                      properties:
+                          id:
+                            type: integer
+                    servicio:
+                      type: object
+                      properties:
+                          id:
+                            type: integer
+              miembros:  
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  serviciosQueAfectan:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                  establecimientosDeInteres:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer  
+                          
+    ResponsePost:
+      type: object
+      properties:
+        entidades:
+          type: array
+          items:
+            type: integer

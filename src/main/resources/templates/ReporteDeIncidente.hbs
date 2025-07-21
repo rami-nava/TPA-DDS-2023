@@ -1,0 +1,69 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/ReporteDeIncidente.css">
+        <title>Reporte de Incidente</title>
+{{/partial}}
+{{> templates/base }}
+
+{{#partial "contenido"}}
+        <div id="base">
+            <div class="circulo">
+                <img src="/./images/reporteImage.png" alt="userImage" id="reporteImage" width="100" height="100">
+            </div>
+                <form id="incidente" action="/reporteDeIncidentes/ABIERTO" method="post">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="selectComunidades">Comunidad</label>
+                            <select class="form-select input-field" name="comunidad" id="selectComunidades">
+                                <option value=-1 selected  >Seleccionar...</option>
+                                {{#each comunidades}}
+                                  <option value="{{this.id}}">{{this.nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="selectEntidad">Entidad</label>
+                                <select class="form-select input-field" name="entidad" id="selectEntidad">
+                                    <option selected>Seleccionar...</option>
+                                    {{#each entidades}}
+                                        <option value="{{this.id}}">{{this.nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="selectEstablecimiento">Establecimiento</label>
+                                <select class="form-select input-field" name="establecimiento" id="selectEstablecimiento">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="selectServicio">Servicio</label>
+                                <select class="form-select input-field" name="servicio" id="selectServicio">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Fecha y Hora</span>
+                                <input type="datetime-local" class="form-control input-field" name="fechaYhora" id="fechaYhoraInput">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Observaciones</span>
+                                <textarea class="form-control input-field" name="observaciones" rows="3"></textarea>
+                            </div>
+                        </div>
+                            <button disabled type="submit" class="btn boton btn-cargarReporte">Enviar</button>
+                </form>
+            </div>
+    <script src="/js/ReporteDeIncidente.js"></script>
+    <script src="/js/EnviarUbicacion.js"></script>
+
+{{/partial}}
+{{> templates/base }}

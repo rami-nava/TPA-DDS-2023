@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head> <!--Contenedor de metadata y otras cosas como el titulo-->
+        <meta charset="utf-8"> <!--Definir los caracteres a utilizar-->
+        <link rel = "stylesheet" href = "ConsultaDeIncidentes.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <title>Consulta de Incidentes</title>
+    </head>
+
+    <body id="body">
+        <header id="main-header">
+            <a id="logo-header" href="#">
+                <span class="site-name">Serviño</span>
+                <span class="site-desc">Servicios/ Comunidades / Confianza</span>
+            </a>
+
+            
+            <nav>
+                <ul>
+                    <li class="nav-item"><a href="#">Inicio</a></li>
+                    <li class="nav-item"><a href="#">Mis Incidentes</a></li>
+                    <li class="nav-item"><a href="#">Sugerencias de Revision</a></li>
+                    <li class="nav-item"><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div id="base">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Seleccione Estado de Incidentes</label>
+                <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Seleccionar...</option>
+                    <option value="1">Abierto</option>
+                    <option value="2">Cerrado</option>
+                </select>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="tarjetaIncidente">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Entidad1</li>
+                            <li class="list-group-item">Establecimiento1</li>
+                            <li class="list-group-item">Servicio1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tarjetaIncidente">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Entidad2</li>
+                            <li class="list-group-item">Establecimiento2</li>
+                            <li class="list-group-item">Servicio2</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tarjetaIncidente">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Entidad3</li>
+                            <li class="list-group-item">Establecimiento3</li>
+                            <li class="list-group-item">Servicio3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tarjetaIncidente">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Entidad4</li>
+                            <li class="list-group-item">Establecimiento4</li>
+                            <li class="list-group-item">Servicio4</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tarjetaIncidente">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Entidad5</li>
+                            <li class="list-group-item">Establecimiento5</li>
+                            <li class="list-group-item">Servicio5</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

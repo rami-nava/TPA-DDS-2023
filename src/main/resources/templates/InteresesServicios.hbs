@@ -1,0 +1,43 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/Intereses.css">
+        <title>Servicios de Interes</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+            <h1>Servicios de Interes</h1>
+                {{#unless servicios.empty}}
+                    <div class="row row-cols-1 g-4">
+                    {{#each servicios}}
+                        <div class="col">
+                            <div class="tarjeta d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h2>{{this.servicio.nombre}}</h2>
+                                    <h4>Tipo: {{this.servicio.tipoNombre}}</h4>
+                                    <h4>Rol: {{this.nombreRol}}</h4>
+                                    <h4>Estado: {{this.servicio.estado}}</h4>
+                                    <h4>Establecimiento: {{this.servicio.establecimiento.nombre}}</h4>
+                                </div>
+                                <div class="contenedorBotones">
+                                    <button type="button" class="btn btn-lg btn-success btn-cambiar-rol-interes" data-servicio-id="{{this.id}}">Convertirme en: {{otroRol}}</button>
+                                    <button type="button" class="btn btn-lg btn-danger btn-eliminar-parInteres" data-servicio-id="{{this.id}}">Eliminar</button>
+                                </div>
+                          </div>
+                        </div>
+                    {{/each}}
+                    </div>
+                {{else}}
+                    <h2>No se encontraron servicios de interés.</h2>
+                {{/unless}}
+        </div>
+        <div class="instruccion">
+            <h6>Para marcar un servicio de interés, vaya a la pestaña de empresas.</h6>
+        </div>
+        <script src="/js/Intereses.js"></script>
+        {{#if usuarioBasico}}
+            <script src="/js/EnviarUbicacion.js"></script>
+        {{/if}}
+{{/partial}}
+{{> templates/base }}

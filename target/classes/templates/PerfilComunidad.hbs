@@ -1,0 +1,43 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/PerfilComunidad.css">
+        <title>Perfil Comunidad</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+            <div class="informacion">
+                <h2>{{comunidad.nombre}}</h2>
+                <p class="admin"><span class="highlight">Administrador:</span>
+                   {{#if administrador}}
+                        <a href="/perfil/{{comunidad.administrador.id}}">
+                   {{/if}}
+                        {{comunidad.administrador.usuario.username}}</a><p>
+                <p class="reportes"><span class="highlight">Cantidad de incidentes reportados: </span>{{comunidad.cantIncidentesReportados}}</p>
+                <p class="reportes"><span class="highlight">Cantidad de incidentes cerrados: </span>{{comunidad.cantIncidentesCerrados}}</p>
+                <p class="miembros"><span class="highlight">Miembros:</span>
+                <ul class="miembro">
+                  {{#each comunidad.miembros}}
+                  {{#if administrador}}
+                    <li><a href="/perfil/{{this.id}}">{{this.usuario.username}}</a></li>
+                   {{else}}
+                   <li>{{this.usuario.username}}</li>
+                   {{/if}}
+                  {{/each}}
+                 </ul>
+                </p>
+                {{#if miComunidad}}
+                    <div class="button-group">
+                        <button type="button" class="btn btn-danger" id="abandonarComunidad" data-comunidad-id="{{comunidad.id}}">Abandonar Comunidad</button>
+                    </div>
+                {{/if}}
+
+            </div>
+        </div>
+        <script src="/js/AbandonarComunidad.js"></script>
+        {{#if usuarioBasico}}
+            <script src="/js/EnviarUbicacion.js"></script>
+        {{/if}}
+{{/partial}}
+{{> templates/base }}

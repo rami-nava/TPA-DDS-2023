@@ -1,0 +1,155 @@
+#body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    background-color: #ffd59e;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.base {
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tarjetaComunidad {
+    margin: 40px;
+    min-height: 180px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.45);
+    text-align: left;
+    min-width: 400px;
+}
+
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group .btn-eliminar {
+    background-color: #DE2F24;
+    color: white !important;
+}
+
+.button-group .btn-incidentes {
+    background-color: #E7A350;
+    color: white !important;
+}
+
+.button-group .btn-informacion {
+    background-color: #308534;
+    color: white !important;
+}
+
+.button-group .btn-unirse {
+    background-color: #308534;
+    color: white !important;
+}
+
+#main-header {
+	background: #130101;
+	height: 80px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+    z-index: 999;
+}
+
+#main-header a {
+	color: white;
+}
+
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+#logo-header:hover {
+	color: #73caf2cc;
+}
+
+#logo-header .site-name {
+	display: block;
+	font-weight: 700;
+    font-size: x-large;
+}
+
+#logo-header .site-desc {
+	display: block;
+	font-weight: 300;
+	font-size: 0.8em;
+	color: #999;
+}
+
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-right: 20px;
+}
+
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+}
+
+nav ul li a {
+	display: block;
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	background: #73caf2cc;
+}
+
+.dropdown-element{
+    width:100%;
+}
+
+.dropdown-element a:hover{
+    background: #73caf2cc;
+}
+
+.dropdown-element form:hover{
+    background: #73caf2cc;
+}
+
+#crearComunidad{
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#nombre{
+    width: 400px;
+    margin-right: 10px;
+}
+
+#formCrearComunidad{
+    display: flex;
+    align-items: center;
+}
+
+.boton {
+    background-color: saddlebrown !important;
+    color: white !important;
+}

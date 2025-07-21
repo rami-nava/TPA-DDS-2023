@@ -1,0 +1,28 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/Observaciones.css">
+        <title>Observaciones</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+    <div id="base">
+        <h1>Observaciones</h1>
+        {{#each reportes}}
+            <div class="col">
+                <div class="tarjetaObservacion">
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item"><span class="highlight">Denunciante: </span> {{#if this.miembroHaSidoEliminado }} <span class= "highlightRed">MiembroEliminado </span> {{else}}{{this.getDenunciante.getNombre}} {{this.getDenunciante.getApellido}} {{/if}} </li>
+                        <li class="list-group-item"><span class="highlight">Horario: </span>{{this.getFechaYhora.getDayOfMonth}}/{{this.getFechaYhora.getMonthValue}}/{{this.getFechaYhora.getYear}}  {{this.getFechaYhora.getHour}}:{{this.getMinutosDelHorario}}</li>
+                        <li class="list-group-item"><span class="highlight">Observacion: </span>{{this.getObservaciones}}</li>
+                    </ul>
+                </div>
+            </div>
+        {{/each}}
+
+    </div>
+
+
+ {{/partial}}
+ {{> templates/base }}

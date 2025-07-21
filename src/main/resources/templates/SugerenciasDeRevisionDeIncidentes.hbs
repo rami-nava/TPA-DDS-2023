@@ -1,0 +1,41 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/SugerenciasDeRevisionDeIncidentes.css">
+        <title>Sugerencia de revisión de incidentes</title>
+{{/partial}}
+{{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+            {{#if noHayIncidentes}}
+                <h1>No tenés solicitudes de revisión activas</h1>
+            {{else}}
+                <h1>Solicitudes de Revisión Activas</h1>
+                <div>
+                    {{#each incidentesCercanos}}
+                        <div class="col">
+                            <div class="tarjetaRevision">
+                                <div class="contenedorCirculo">
+                                    <div class="circulo">
+                                        {{#if this.servicio.esBanio}}
+                                            <img src="/./images/banioLogo.jpeg" alt="banioLogo" id="banioLogo" width="100" height="100">
+                                        {{else}}
+                                            <img src="/./images/elevacionLogo.jpeg" alt="elevacionLogo" id="elevacionLogo" width="100" height="100">
+                                        {{/if}}
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><span class="highlight">{{this.establecimiento.tipo}}:</span> {{this.establecimiento.nombre}}</li>
+                                    <li class="list-group-item"><span class="highlight">{{this.servicio.nombre}}:</span> {{this.servicio.tipoNombre}}</li>
+                                    <li class="list-group-item"><span class="highlight2">Tiempo abierto: </span><span class="highlight3">{{this.tiempoAbierto}}</span></li>
+                                    <li class="list-group-item"><span class="highlight2">Cantidad de veces reportado: </span> <span class="highlight3">{{this.getReportesDeApertura.size}}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            {{/if}}
+
+        </div>
+{{/partial}}
+{{> templates/base }}

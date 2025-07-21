@@ -1,0 +1,55 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/PerfilUsuario.css">
+        <title>Perfil Usuario</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+        <div class="contenedor-botones">
+            <a href="/incidentes" class="volver-button">Volver</a>
+            {{#if miPerfil}}
+                <button class="btn boton btn-editar" onclick="window.location.href='/editar/perfil'">Editar</button>
+            {{/if}}
+        </div>
+            {{#if miPerfil}}
+                <h2>Mi Perfil</h2>
+            {{else}}
+                <h2>Perfil</h2>
+            {{/if}}
+            <div class="imagen">
+                <img alt="fotoDePerfil" src="/images/userLogo.png" id="fotoDePerfil">
+            </div>
+            <div class="informacion">
+                <h2>{{miembroDeComunidad.usuario.username}}</h2>
+                <p><span class="highlight">Nombre:</span> {{miembroDeComunidad.nombre}}</p>
+                <p><span class="highlight">Apellido:</span> {{miembroDeComunidad.apellido}}</p>
+                <p><span class="highlight">Mail:</span> {{miembroDeComunidad.receptorDeNotificaciones.mail}}</p>
+                <p><span class="highlight">Telefono:</span> {{miembroDeComunidad.receptorDeNotificaciones.telefono}}</p>
+                {{#unless perfilAdministrador}}
+                    <p><span class="highlight">Medio de Comunicacion:</span> {{miembroDeComunidad.receptorDeNotificaciones.medioDeComunicacion.nombre}}</p>
+                    <p><span class="highlight">Forma de Notificacion:</span> {{miembroDeComunidad.receptorDeNotificaciones.formaDeNotificar.nombre}}</p>
+                    <p><span class="highlight">Cantidad de incidentes reportados:</span> {{incidentesAbiertos}}</p>
+                    <p><span class="highlight">Cantidad de incidentes cerrados:</span> {{incidentesCerrados}}</p>
+                    {{#unless miembroDeComunidad.comunidades.empty}}
+                    <p><span class="highlight">
+                        {{#if miPerfil}}
+                        Mis comunidades:
+                        {{else}}
+                        Comunidades:
+                        {{/if}}
+                        </span>
+                      {{#each miembroDeComunidad.comunidades}}
+                        <a href="/comunidades/{{this.id}}">{{this.nombre}}</a>{{#unless @last}}, {{/unless}}
+                      {{/each}}
+                    </p>
+                    {{/unless}}
+                {{/unless}}
+            </div>
+        </div>
+        {{#if usuarioBasico}}
+            <script src="/js/EnviarUbicacion.js"></script>
+        {{/if}}
+{{/partial}}
+{{> templates/base }}

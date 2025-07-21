@@ -1,0 +1,24 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/CargaDeEntidadesYOrganismos.css">
+        <title>Carga de Entidades y Organismos</title>
+{{/partial}}
+{{> templates/base }}
+
+{{#partial "contenido"}}
+        <div id="base">
+        <h1>Ingrese información de empresas:</h1>
+            <div class="circulo">
+                <img src="/./images/entidadLogo.png" alt="userImage" id="empresaImage" width="100" height="100">
+            </div>
+               <form id="casilla" enctype="multipart/form-data" action="/empresas/cargar" method="POST">
+               <!-- como se encripta archivos al mandarlos por un formulario -->
+                   <div class="mb-3">
+                       <label for="archivoCSV" class="form-label">Seleccione un archivo CSV</label>
+                       <input class="form-control" type="file" id="archivoCSV" name="archivoCSV">
+                   </div>
+                   <button type="submit" class="btn boton">Subir Archivo</button>
+               </form>
+            </div>
+{{/partial}}
+{{> templates/base }}

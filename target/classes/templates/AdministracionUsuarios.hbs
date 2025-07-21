@@ -1,0 +1,32 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "css/AdministracionUsuarios.css">
+        <title>Administracion de Usuarios</title>
+{{/partial}}
+{{> templates/base }}
+
+{{#partial "contenido"}}
+        <div id="base">
+            <h1>USUARIOS</h1>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+            {{#each miembros}}
+                <div class="col">
+                    <div class="tarjetaUsuario d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2>{{this.usuario.username}}</h2>
+                            <h4>Nombre: {{this.nombre}}</h4>
+                            <h4>Apellido: {{this.apellido}}</h4>
+                            <h4>Rol: {{this.usuario.rol.nombre}}</h4>
+                        </div>
+                        <div class="contenedorBotones">
+                            <button type="button" class="btn btn-lg boton" onclick="window.location.href='/perfil/{{this.id}}'">Ver Perfil</button>
+                            <button type="button" class="btn btn-lg btn-danger btn-eliminar" data-miembro-id="{{this.id}}">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+        </div>
+        <script src="js/EliminarUsuarios.js"></script>
+{{/partial}}
+{{> templates/base }}

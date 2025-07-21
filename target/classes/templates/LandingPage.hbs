@@ -1,0 +1,91 @@
+{{> templates/favicon }}
+{{#partial "head"}}
+        <link rel = "stylesheet" href = "/css/LandingPage.css">
+        <title>Landing Page</title>
+{{/partial}}
+{{> templates/favicon }}
+{{#partial "body"}}
+    <body id="body">
+                <div id="superior">
+                    <h1 class="site-name">Serviño</h1>
+                    <h6 class="site-desc">Servicios/ Comunidades </h6>
+
+                    <button class="button_slide slide_left" onclick="window.location.href='/inicioDeSesion'">Iniciar Sesion </button>
+                </div>
+
+                <div id="medio-arriba">
+                    <div id="base">
+                        <form action="/" method="post">
+                            <h3 class="texto">¿No tienes una cuenta?</h3>
+                            {{#if hayError}}
+                            <div class="error-box">{{mensajeDeError}}</div>
+                            {{/if}}
+                            <div class="form-group">
+                                 <div class="input-group mb-3">
+                                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <div class="input-group mb-3">
+                                     <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <div class="input-group mb-3">
+                                     <span class="input-group-text">@</span>
+                                     <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <div class="input-group mb-3">
+                                     <span class="input-group-text">📞</span>
+                                     <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="Telefono">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <div class="input-group mb-3">
+                                     <span class="input-group-text">👤</span>
+                                     <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">🔒</span>
+                                    <input type="password" class="form-control" name="contrasenia" id="contrasenia" placeholder="Contraseña">
+                                </div>
+                            </div>
+                            <button type="submit" class="button_slide slide_left btn-registrar">Registrarse </button>
+                        </form>
+                    </div>
+                    <img src="./images/comunicacion.jpeg" alt="imagen de comunicacion" id="comunicacionImg">
+                </div>
+
+                <div id="medio-medio">
+                    <h3>¿Representas una empresa?</h3>
+                    <h4>Vinculate:</h4>
+                        <button type="button" class="button_slide slide_left" onclick="window.location.href='/organismoDeControl/representante'">Organismo de Control </button>
+                        <button type="button" class="button_slide slide_left" onclick="window.location.href='/entidadPrestadora/representante'">Entidad Prestadora</button>
+                </div>
+
+                <div id="medio-abajo">
+                    <h3>Acerca de</h3>
+                    <p>Serviño es una aplicacion destinada a proveerle informacion a sus usuarios acerca del
+                        estado de los servicios que les interesen. Dicha informacion es provista por los mismos usuarios,
+                        los cuales pueden informar el estado de los servicios (de aquellos registrados en la aplicacion),
+                        para los demas usuarios. Estos, pueden agruparse en comunidades para recibir notificaciones/alertas
+                        a partir de los informes elevados por sus compañeros. Ademas, podran recibir notificaciones por parte
+                        del sistema solicitando la revision de incidentes, para confirmar o no, si es que dicho incidente
+                        sigue activo.
+                    </p>
+                </div>
+
+                <footer class="bg-dark text-light text-center py-3">
+                    <div class="container">
+                        <p>&copy; 2023 Serviño</p>
+                        <p>@: diseniogrupo9@gmail.com</p>
+                    </div>
+                </footer>
+
+    </body>
+{{/partial}}
+{{> templates/favicon }}

@@ -1,0 +1,115 @@
+@import url(https://fonts.google.com/specimen/Oswald);
+#body{
+	font-family: 'Oswald', sans-serif;
+	margin: 0;
+    padding: 0;
+    display:flex;
+    justify-content: center;
+    min-height: 800px;
+    background-color: #ffd59e;
+    background-size: cover;
+    background-attachment: fixed;
+	color: #130101;
+}
+
+#base{
+    display:flex;
+    height: 525px;
+    min-width: 900px;
+    margin-top: 120px;
+    flex-direction: column; /*para que el texto quede centrado y en distintos renglones*/
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.7);
+}
+
+#base img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5%;
+	margin-bottom: 2%;
+}
+
+#base h2{
+	text-align: center;
+	margin-bottom: 5%;
+	font-weight: bold;
+}
+
+#base p{
+	margin-bottom: 2%;
+	margin-left: 5%;
+}
+
+#main-header {
+	background: #130101;
+	height: 80px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+    z-index: 999;
+}	
+
+#main-header a {
+	color: white;
+}
+		
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+#logo-header:hover {
+	color: #73caf2cc;
+}
+	
+#logo-header .site-name {
+	display: block;
+	font-weight: 700;
+    font-size: x-large;
+}
+	
+#logo-header .site-desc {
+	display: block;
+	font-weight: 300;
+	font-size: 0.8em;
+	color: #999;
+}
+	
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-right: 20px;
+}
+	
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+}
+			
+nav ul li a {
+	display: block;
+	padding: 0 10px;
+	text-decoration: none;
+}
+			
+nav ul li a:hover {
+	background: #73caf2cc;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+
+

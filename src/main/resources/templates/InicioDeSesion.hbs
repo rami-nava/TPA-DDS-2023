@@ -1,0 +1,55 @@
+{{> templates/favicon }}
+{{#partial "head"}}
+    <link rel = "stylesheet" href = "css/InicioDeSesion.css">
+    <title>Iniciar Sesion</title>
+{{/partial}}
+{{> templates/favicon }}
+
+{{#partial "body"}}
+    <body id="body">
+        <div id="base">
+            {{#if hayError}}
+            <div class="error-box">{{mensajeDeError}}</div>
+            {{/if}}
+            <div class="circulo">
+                <img src="./images/userLogo.png" alt="userImage" id="userImage" width="100" height="100">
+            </div>
+                <form id="incidente" action="/inicioDeSesion" method="post">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">👤</span>
+                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">🔒</span>
+                            <input type="password" class="form-control" name="contrasenia" id="contrasenia" placeholder="Contraseña">
+                             <button type="button" id="mostrarContraseniaButton" class="btn btn-outline-secondary">
+                                                    <i id="eyeIcon" class="bi bi-eye"></i>👁️
+                                                </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn boton inicioSesion">Iniciar Sesion</button>
+                </form>
+        </div>
+        <script>
+                var mostrarContraseniaButton = document.getElementById("mostrarContraseniaButton");
+                var contraseniaInput = document.getElementById("contrasenia");
+                var eyeIcon = document.getElementById("eyeIcon");
+
+                mostrarContraseniaButton.addEventListener("click", function () {
+                    if (contraseniaInput.type === "password") {
+                        contraseniaInput.type = "text";
+                        eyeIcon.classList.remove("bi-eye");
+                        eyeIcon.classList.add("bi-eye-slash");
+                    } else {
+                        contraseniaInput.type = "password";
+                        eyeIcon.classList.remove("bi-eye-slash");
+                        eyeIcon.classList.add("bi-eye");
+                    }
+                });
+            </script>
+    </body>
+{{/partial}}
+{{> templates/favicon }}

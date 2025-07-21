@@ -1,0 +1,69 @@
+{{> templates/base }}
+{{#partial "tituloYcss"}}
+        <link rel = "stylesheet" href = "/css/Entidades.css">
+        <title>Entidades</title>
+ {{/partial}}
+ {{> templates/base }}
+
+ {{#partial "contenido"}}
+        <div id="base">
+            <h1>ENTIDADES</h1>
+                <div class="row row-cols-1 g-4">
+                {{#if usuarioBasico}}
+                    {{#each entidadesInteres}}
+                        <div class="col">
+                            <div class="tarjetaEntidad d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h2>{{this.nombre}}</h2>
+                                    <h4>Tipo: {{this.tipo}}</h4>
+                                    <h4>Establecimientos: {{this.cantidadEstablecimientos}}</h4>
+                                    <h4>Algunos Establecimientos: {{this.nombreDeEstablecimientos}}</h4>
+                                </div>
+                                <div class="contenedorBotones">
+                                    <button type="button" class="btn btn-lg btn-danger btn-eliminar-entidadInteres" data-entidad-id="{{this.id}}">Eliminar interes</button>
+                                    <button type="button" class="btn btn-lg boton" onclick="window.location.href='/organismosDeControl/{{organismo_id}}/entidadesPrestadoras/{{entidadPrestadora_id}}/entidades/{{this.id}}/establecimientos'">Establecimientos</button>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                    {{#each entidadesSinInteres}}
+                        <div class="col">
+                            <div class="tarjetaEntidad d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h2>{{this.nombre}}</h2>
+                                    <h4>Tipo: {{this.tipo}}</h4>
+                                    <h4>Establecimientos: {{this.cantidadEstablecimientos}}</h4>
+                                    <h4>Algunos Establecimientos: {{this.nombreDeEstablecimientos}}</h4>
+                                </div>
+                                <div class="contenedorBotones">
+                                    <button type="button" class="btn btn-lg btn-success btn-nuevo-interes" data-organismo-id="{{organismo_id}}" data-entidadPrestadora-id="{{entidadPrestadora_id}}" data-entidad-id="{{this.id}}">De mi Interes</button>
+                                    <button type="button" class="btn btn-lg boton" onclick="window.location.href='/organismosDeControl/{{organismo_id}}/entidadesPrestadoras/{{entidadPrestadora_id}}/entidades/{{this.id}}/establecimientos'">Establecimientos</button>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{else}}
+                {{#each entidades}}
+                        <div class="col">
+                            <div class="tarjetaEntidad d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h2>{{this.nombre}}</h2>
+                                    <h4>Tipo: {{this.tipo}}</h4>
+                                    <h4>Establecimientos: {{this.cantidadEstablecimientos}}</h4>
+                                    <h4>Algunos Establecimientos: {{this.nombreDeEstablecimientos}}</h4>
+                                </div>
+                                <div class="contenedorBotones">
+                                    <button type="button" class="btn btn-lg boton" onclick="window.location.href='/organismosDeControl/{{organismo_id}}/entidadesPrestadoras/{{entidadPrestadora_id}}/entidades/{{this.id}}/establecimientos'">Establecimientos</button>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/if}}
+                </div>
+        </div>
+        <script src="/js/Intereses.js"></script>
+        {{#if usuarioBasico}}
+            <script src="/js/EnviarUbicacion.js"></script>
+        {{/if}}
+{{/partial}}
+{{> templates/base }}
