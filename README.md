@@ -9,34 +9,6 @@ Esta es una plantilla de proyecto diseñada para:
   *  [Entrada de Blog (en español)](https://www.paradigmadigital.com/dev/nos-espera-junit-5/)
 * Maven 3.8.1 o superior
 
-# Ejecutar tests
-
-```
-mvn test
-```
-
-# Validar el proyecto de forma exahustiva
-
-```
-mvn clean verify
-```
-
-Este comando hará lo siguiente:
-
- 1. Ejecutará los tests
- 2. Validará las convenciones de formato mediante checkstyle
- 3. Detectará la presencia de (ciertos) code smells
- 4. Validará la cobertura del proyecto
-
-# Entrega del proyecto
-
-Para entregar el proyecto, crear un tag llamado `entrega-final`. Es importante que antes de realizarlo se corra la validación
-explicada en el punto anterior. Se recomienda hacerlo de la siguiente forma:
-
-```
-mvn clean verify && git tag entrega-final && git push origin HEAD --tags
-```
-
 # Configuración del IDE (IntelliJ)
 
  1. Tabular con dos espacios: ![Screenshot_2021-04-09_18-23-26](https://user-images.githubusercontent.com/677436/114242543-73e1fe00-9961-11eb-9a61-7e34be9fb8de.png)
